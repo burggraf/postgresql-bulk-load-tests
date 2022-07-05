@@ -71,7 +71,7 @@ There are many other factors that can affect your data insert speed and ways you
 
 ## Conclusion
 
-If you need to deal with large amounts of data, it pays to plan ahead when you're writing your SQL insert code.  A few small changes can potentially save you hours (or sometimes even days) or processing time.
+If you need to deal with large amounts of data, it pays to plan ahead when you're writing your SQL insert code.  A few small changes can potentially save you hours (or sometimes even days) of processing time.
 
 #### Appendix: Sample Test Results
 
