@@ -48,7 +48,7 @@ This method speeds things up considerably.  In my tests, it was about 6 times fa
 
 ### What About Both?
 
-Can you combine transactions and batch insert statements for even more speed?  Well, yes, and no.  You certainly can combine them, but the speed increase is negligable (or in my Windows test case it even slowed things down just a bit.)
+Can you combine transactions and batch insert statements for even more speed?  Well, yes, and no.  You certainly can combine them, but the speed increase is negligible (or in my Windows test case it even slowed things down just a bit.)
 
 ```sql
 begin transaction;
