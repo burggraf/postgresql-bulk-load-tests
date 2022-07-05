@@ -45,19 +45,19 @@ create 100k users with individual insert statements
 
 real	0m9.112s
 user	0m0.509s
-sys	    0m0.337s
+sys 0m0.337s
 
 create 100k users with individual insert statements in a transaction
 
 real	0m2.540s
 user	0m0.457s
-sys	  0m0.325s
+sys 0m0.325s
 
 create 100k users with batch insert statement
 
 real	0m1.360s
 user	0m0.179s
-sys	  0m0.042s
+sys 0m0.042s
 
 create 100k users with batch insert statement in a transaction
 
