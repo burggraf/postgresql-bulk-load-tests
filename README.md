@@ -77,6 +77,8 @@ If you need to deal with large amounts of data, it pays to plan ahead when you'r
 
 See my GitHub Repo [postgresql-bulk-load-tests](https://github.com/burggraf/postgresql-bulk-load-tests) for some code to test these methods.  My test run results are listed below.
 
+![Results](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aed16v2x2k8pihjrzpxq.png)
+
 ```
 ===========================
 Windows VM (UTM Windows 11)
