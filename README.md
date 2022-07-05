@@ -25,6 +25,7 @@ A quick and easy
 
 ### Appendix: Sample Test Results
 
+```
 ===========================
 Windows VM (UTM Windows 11)
 ===========================
@@ -63,3 +64,4 @@ create 100k users with batch insert statement in a transaction
 real	0m1.154s
 user	0m0.189s
 sys	  0m0.041s
+```
