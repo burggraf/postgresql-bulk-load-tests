@@ -44,7 +44,7 @@ insert into users (id, firstname, lastname) values
   (1, 'George', 'Washington'),(2, 'John', 'Adams'),(3, 'Thomas', 'Jefferson');
 ```
 
-This method speeds things up considerably.  In my tests, it was about 6 times faster.
+This method speeds things up considerably.  In my tests, it was about 6 times faster.  The same rules apply to batch sizes as with transactions -- you'll want to test different batch sizes to optimize things.  I generally tend to start with a batch of around 10000 records for most applications and if that works well enough, I leave it there.
 
 ### What About Both?
 
@@ -61,11 +61,17 @@ So, while using both techniques here is perfectly valid, it may not be the faste
 
 ## The Downsides
 
-What are the potential downsides 
+What are the potential downsides of using transactions or batched inserts?  Error handling is the main one.  If any one of the records in your batch fails, the entire batch will fail and no data will be inserted into your table from that batch.  So you'll need to make sure your data is valid or else have some way to break up and fix failed batches.
 
-## Other Considerations
+If the failure is caused by a unique constraint, you can use the [`on conflict`](https://www.postgresql.org/docs/current/sql-insert.html#SQL-ON-CONFLICT) clause in your insert statement, but if your insert fails for any other reason, it'll throw out the whole batch.
+
+## Other Speed Considerations
 
 There are many other factors that can affect your data insert speed and ways you can make things even faster.  Removing indexes until after inserting data, creating non-logged tables, and avoiding unnecessary unique keys are just a few of these.  These other optimizations will improve performance, but probably not nearly as dramatically as the basic techniques described here.
+
+## Conclusion
+
+If you need to deal with large amounts of data, it pays to plan ahead when you're writing your SQL insert code.  A few small changes can potentially save you hours (or sometimes even days) or processing time.
 
 #### Appendix: Sample Test Results
 
