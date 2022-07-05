@@ -17,4 +17,49 @@ insert into users (id, firstname, lastname) values (2, 'John', 'Adams');
 insert into users (id, firstname, lastname) values (3, 'Thomas', 'Jefferson');
 ```
 
-Now we have some basic SQL for inserting records into our user table. This will get the data into our table, alright, but it's the slowest way to get data into our table.
+Now we have some basic SQL for inserting records into our user table. This will get the data into our table, alright, but it's the slowest way to get data into our table.  Let's look at some ways we can speed things up.
+
+## Transactions
+
+A quick and easy 
+
+### Appendix: Sample Test Results
+
+===========================
+Windows VM (UTM Windows 11)
+===========================
+create 100k users with individual insert statements
+30.0 seconds
+create 100k users with individual insert statements in a transaction
+14.0 seconds
+create 100k users with batch insert statement
+4.3 seconds
+create 100k users with batch insert statement in a transaction
+4.6 seconds
+
+====================
+MacBook Pro (M1 Max)
+====================
+create 100k users with individual insert statements
+
+real	0m9.112s
+user	0m0.509s
+sys	    0m0.337s
+
+create 100k users with individual insert statements in a transaction
+
+real	0m2.540s
+user	0m0.457s
+sys	  0m0.325s
+
+create 100k users with batch insert statement
+
+real	0m1.360s
+user	0m0.179s
+sys	  0m0.042s
+
+create 100k users with batch insert statement in a transaction
+
+real	0m1.154s
+user	0m0.189s
+sys	  0m0.041s
